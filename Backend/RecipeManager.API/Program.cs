@@ -8,13 +8,15 @@ using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllers()
-    .AddNewtonsoftJson(options =>
-    {
-        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-        options.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
+// Add CORS policy
+builder.Services.AddCors(co => {
+    co.AddPolicy("name", pb => {
+        pb.WithOrigins("*")
+          .AllowAnyHeader()
+          .AllowAnyMethod();
     });
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -30,6 +32,11 @@ builder.Services.AddScoped<IIngredientService, IngredientService>();
 
 // Register AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+    });
 
 var app = builder.Build();
 
@@ -37,14 +44,15 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RecipeManager API v1"));
+    app.UseSwaggerUI();
 }
 
+app.MapGet("/", () => "Hello");
+app.UseCors("name");
 app.UseHttpsRedirection();
-app.UseAuthorization();
+app.UseRouting();
 
-// Redirect root URL to Swagger UI
-app.MapGet("/", () => Results.Redirect("/swagger"));
+app.UseAuthorization();
 
 app.MapControllers();
 
