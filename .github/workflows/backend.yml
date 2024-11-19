@@ -23,7 +23,7 @@ jobs:
       - name: Build Docker Image
         run: |
           # Build the Docker image and tag it with the specified name and version
-          docker build -t koalacoder/recipe:0.0.4 .  # Adjust this line if your Dockerfile is in a different location
+          docker build -t koalacoder/recipe:0.0.4 -f Backend/dockerfile Backend/  # Specify Dockerfile path and build context
 
       - name: Run Tests (Optional)
         run: |
