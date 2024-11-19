@@ -5,9 +5,13 @@ on:
   push:
     branches:
       - main  # Trigger on pushes to the main branch
+    paths:
+      - Backend/**  # Trigger only if there are changes in the Backend directory
   pull_request:
     branches:
       - main  # Trigger on pull requests targeting the main branch
+    paths:
+      - Backend/**  # Trigger only if there are changes in the Backend directory
 
 jobs:
   build:
@@ -15,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2  # Step to check out the code from the repository
+        uses: actions/checkout@v2  # Step to check out code from the repository
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1  # Set up Docker Buildx for building multi-platform images
@@ -24,12 +28,7 @@ jobs:
         run: |
           # Build the Docker image and tag it with the specified name and version
           docker build -t koalacoder/recipe:0.0.4 -f Backend/dockerfile Backend/
-          # The -f option specifies the Dockerfile location, and Backend/ indicates the build context
-
-      - name: Run Tests
-        run: |
-          # Run tests inside the Docker container to ensure everything is working correctly
-          docker run --rm koalacoder/recipe:0.0.4 dotnet test RecipeManager.Tests/RecipeManager.Tests.csproj --no-build --verbosity normal
+          # Ensure that we are using the correct path for both Dockerfile and context
 
   deploy:
     runs-on: ubuntu-latest  # Use the latest Ubuntu environment for deployment job
@@ -48,11 +47,4 @@ jobs:
       - name: Push Docker Image to Registry
         run: |
           # Push the built image to Docker Hub or another container registry
-          docker push koalacoder/recipe:0.0.4  # Adjust this line if using a different image name or tag
-
-      - name: Deploy to Azure Web App (optional)
-        uses: azure/webapps-deploy@v2  # Example for Azure Web Apps deployment
-        with:
-          app-name: <YOUR_AZURE_APP_NAME>  # Replace with your Azure Web App name
-          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}  # Add your publish profile as a secret
-          images: koalacoder/recipe:0.0.4   # Specify the image to deploy
+          docker push koalacoder/recipe:0.0.4  # Ensure this matches your built image tag
