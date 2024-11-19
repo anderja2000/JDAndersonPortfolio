@@ -1,0 +1,6 @@
+.no-bullets li {
+    display: inline;
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 10px; /* Remove margins */
+  }
