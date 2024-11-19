@@ -27,3 +27,4 @@ COPY --from=build /app/dist .
 
 # What to do when docker run is called
 CMD [ "dotnet", "RecipeManager.API.dll" ]
+#run 
