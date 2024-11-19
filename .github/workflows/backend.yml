@@ -25,7 +25,8 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t koalacoder/recipe:0.0.4 .
+          cd Backend  # Change to Backend directory
+          docker build -t koalacoder/recipe:0.0.4 -f dockerfile .  # Specify the Dockerfile explicitly
 
       - name: List Docker Images
         run: docker images
@@ -46,4 +47,4 @@ jobs:
 
       - name: Push Docker Image to Registry
         run: |
-          docker push koalacoder/recipe:0.0.4
+          docker push koalacoder/recipe:0.0.4  # Ensure this matches your built image tag
