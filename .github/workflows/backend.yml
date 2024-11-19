@@ -23,13 +23,14 @@ jobs:
       - name: Build Docker Image
         run: |
           # Build the Docker image and tag it with the specified name and version
-          docker build -t koalacoder/recipe:0.0.4 -f Backend/dockerfile Backend/  # Specify Dockerfile path and build context
+          docker build -t koalacoder/recipe:0.0.4 -f Backend/dockerfile Backend/
+          # The -f option specifies the Dockerfile location, and Backend/ indicates the build context
 
-      - name: Run Tests (Optional)
+      - name: Run Tests
         run: |
-          # Run tests inside the Docker container
-          docker run --rm koalacoder/recipe:0.0.4 dotnet test RecipeManager.Tests/RecipeManager.Tests.csproj
-      
+          # Run tests inside the Docker container to ensure everything is working correctly
+          docker run --rm koalacoder/recipe:0.0.4 dotnet test RecipeManager.Tests/RecipeManager.Tests.csproj --no-build --verbosity normal
+
   deploy:
     runs-on: ubuntu-latest  # Use the latest Ubuntu environment for deployment job
     needs: build  # Ensure this job runs after the build job
@@ -48,3 +49,10 @@ jobs:
         run: |
           # Push the built image to Docker Hub or another container registry
           docker push koalacoder/recipe:0.0.4  # Adjust this line if using a different image name or tag
+
+      - name: Deploy to Azure Web App (optional)
+        uses: azure/webapps-deploy@v2  # Example for Azure Web Apps deployment
+        with:
+          app-name: <YOUR_AZURE_APP_NAME>  # Replace with your Azure Web App name
+          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}  # Add your publish profile as a secret
+          images: koalacoder/recipe:0.0.4   # Specify the image to deploy
