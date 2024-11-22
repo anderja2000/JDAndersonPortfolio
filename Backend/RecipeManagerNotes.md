@@ -87,7 +87,7 @@ This command does the following:
   - `../PenguinRecipes.API` is the path to the Emperor's recipe book from the data igloo
 
 This command applies the new recipes to the Great Antarctic Recipe Database, updating its menu to match the current recipe collection. It uses the secret ingredients and cooking instructions from the Emperor's recipe book to connect to and update the database.
-
+#added
 Note: Don't add `.fish` to the recipe name when updating the database, or you might confuse the penguin chef!
 ```
 
