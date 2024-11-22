@@ -5,6 +5,7 @@ export default function HomePage() {
         <main className="home">
             <h1>Home Page</h1>
             <p>check update</p>
+            <p>checking again</p>
         </main>
     )
 }
