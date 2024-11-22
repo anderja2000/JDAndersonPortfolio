@@ -12,7 +12,7 @@ cd RecipeManager.Data
 ``` 
 dotnet ef migrations add Initial -s ../RecipeManager.API
 ```
-
+#also testing
 #added
 This command does the following:
 - `dotnet ef migrations add`: Tells EF Core to create a new migration
