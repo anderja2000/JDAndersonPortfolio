@@ -60,7 +60,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-            app-name: 'JDAnderson'  # Ensure this matches your Azure Web App name
-            slot-name: 'production'  # Specify the deployment slot if applicable
-            publish-profile: ${{ secrets.AZURE_PUBLISHPROFILE }}  # Simplified secret reference
-            images: 'index.docker.io/${{ secrets.DOCKER_USERNAME }}/recipe:0.0.4'
+          app-name: 'JDAnderson'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile }}
+          images: 'index.docker.io/${{ secrets.DOCKER_USERNAME }}/koalacoder/recipe:0.0.4'
