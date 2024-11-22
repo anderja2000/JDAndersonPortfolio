@@ -4,6 +4,7 @@ export default function HomePage() {
     return (
         <main className="home">
             <h1>Home Page</h1>
+            <p>check update</p>
         </main>
     )
 }
