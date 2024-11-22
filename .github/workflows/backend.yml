@@ -55,7 +55,7 @@ jobs:
           echo "Password: ${{ secrets.DOCKER_PASSWORD  }}"
       
       
-
+#changes were made 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -63,4 +63,4 @@ jobs:
             app-name: 'JDAnderson'  # Ensure this matches your Azure Web App name
             slot-name: 'production'  # Specify the deployment slot if applicable
             publish-profile: ${{ secrets.AZURE_PUBLISHPROFILE }}  # Simplified secret reference
-            images: 'index.docker.io/${{ secrets.DOCKER_USERNAME }}/koalacoder/recipe:0.0.4'
+            images: 'index.docker.io/${{ secrets.DOCKER_USERNAME }}/recipe:0.0.4'
