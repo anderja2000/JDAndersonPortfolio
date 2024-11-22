@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RecipeManager.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d4782905a274127db0df6219972f2b55c08f191")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe6ed941b95da617082a824ccc235902a082d6e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("RecipeManager.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RecipeManager.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
