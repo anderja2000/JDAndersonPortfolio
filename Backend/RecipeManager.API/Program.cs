@@ -22,7 +22,15 @@ builder.Services.AddSwaggerGen();
 
 // Configure DbContext and Repositories
 string connectionString = builder.Configuration.GetConnectionString("recipesStored")!;
-builder.Services.AddDbContext<RecipeContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<RecipeContext>(options => 
+    options.UseSqlServer(connectionString, sqlOptions => 
+        sqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 5, // Maximum number of retry attempts
+            maxRetryDelay: TimeSpan.FromSeconds(30), // Maximum delay between retries
+            errorNumbersToAdd: null // Additional error numbers to consider for retries
+        )
+    )
+);
 
 // Register repositories and services
 builder.Services.AddScoped<IRecipeRepo, RecipeRepo>();

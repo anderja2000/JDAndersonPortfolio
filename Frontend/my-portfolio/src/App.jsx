@@ -1,3 +1,4 @@
+import { lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AboutMePage from './components/AboutMePage.jsx';
 import CareerTimelinePage from './components/CareerTimelinePage.jsx';
@@ -6,7 +7,7 @@ import HomePage from './components/HomePage.jsx';
 import ProjectsPage from './components/ProjectsPage.jsx';
 import SkillsPage from './components/SkillsPage.jsx';
 import Header from './components/Header.jsx';
-
+const InteractiveHeader = lazy(() => import('./InteractiveHeader.jsx'));
 function App() {
   return (
     <Router>

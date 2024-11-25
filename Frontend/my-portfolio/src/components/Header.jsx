@@ -4,7 +4,7 @@ const Header = () => {
 
     return (
         <header>
-            <ul className="no-bullets">
+            <ul className="navbar">
                 <li style={{ marginRight: '400px'}}>
                     <Link to="/" >Home</Link>
                 </li>

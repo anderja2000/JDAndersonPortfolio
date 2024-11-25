@@ -7,7 +7,7 @@
 ```
 cd RecipeManager.Data
 ```
-# more 
+# more npm
 #### *2. Run the migration command* 
 ``` 
 dotnet ef migrations add Initial -s ../RecipeManager.API
