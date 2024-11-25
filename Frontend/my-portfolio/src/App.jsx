@@ -7,7 +7,7 @@ import HomePage from './components/HomePage.jsx';
 import ProjectsPage from './components/ProjectsPage.jsx';
 import SkillsPage from './components/SkillsPage.jsx';
 import Header from './components/Header.jsx';
-const InteractiveHeader = lazy(() => import('./InteractiveHeader.jsx'));
+const InteractiveHeader = lazy(() => import('./components/InteractiveHeader.jsx'));
 function App() {
   return (
     <Router>
