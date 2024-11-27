@@ -3,7 +3,7 @@ import "../styles/Header.css";
 const Header = () => {
 
     return (
-        <header>
+        <nav className="header">
             <ul className="navbar">
                 <li style={{ marginRight: '400px'}}>
                     <Link to="/" >Home</Link>
@@ -26,7 +26,7 @@ const Header = () => {
 
 
             </ul>
-        </header>
+        </nav>
     )
 }
 

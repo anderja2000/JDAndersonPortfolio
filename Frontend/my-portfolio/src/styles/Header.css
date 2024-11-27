@@ -1,6 +1,22 @@
 .navbar li {
-    display: inline;
-    list-style-type: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
-    margin: 10px; /* Remove margins */
-  }
+  display: inline;
+  list-style-type: none;
+  /* Remove bullets */
+  
+  /* Remove padding */
+  margin: 10px;
+  /* Remove margins */
+}
+
+.header { 
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: blueviolet;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
