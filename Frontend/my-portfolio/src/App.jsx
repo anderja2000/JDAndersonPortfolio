@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy, useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AboutMePage from './components/AboutMePage.jsx';
 import CareerTimelinePage from './components/CareerTimelinePage.jsx';
@@ -8,19 +8,27 @@ import ProjectsPage from './components/ProjectsPage.jsx';
 import SkillsPage from './components/SkillsPage.jsx';
 import Header from './components/Header.jsx';
 const InteractiveHeader = lazy(() => import('./components/InteractiveHeader.jsx'));
+import { ThemeContext } from './context/ThemeContext.jsx';
+import { ThemeContextProvider } from './context/ThemeContext.jsx';
 function App() {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/AboutMe" element={<AboutMePage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/skills" element={<SkillsPage />} />
-        <Route path="/timeline" element={<CareerTimelinePage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-    </Router>
+
+    <main className={`App theme-${theme}`}>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/AboutMe" element={<AboutMePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/skills" element={<SkillsPage />} />
+          <Route path="/timeline" element={<CareerTimelinePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </Router>
+    </main>
+
   );
 }
 

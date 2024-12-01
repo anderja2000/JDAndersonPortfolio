@@ -1,0 +1,45 @@
+.toggle-switch {
+    margin-right:30px; 
+    display: inline;
+    align-items: center;
+    cursor: pointer;
+    width: 70px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #ccc;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-switch.active {
+    border: 2px solid #333;
+    transition: border-color 0.7s ease-in;
+    background-color: #04e072;
+}
+
+.toggle-switch-circle {
+    margin-left: 3px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.toggle-switch-circle.active {
+    transform: translateX(30px);
+    background-color: #007bff;
+}
+
+.toggle-switch-circle img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}

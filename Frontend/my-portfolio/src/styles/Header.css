@@ -9,11 +9,15 @@
 }
 
 .header { 
-  width: 100%;
   display: flex;
+  flex-direction: row;
+  width: 100vw; /* take up the full width of the viewport */
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  color: white;
   background-color: blueviolet;
+  color: white;
+  height: 5em;
 }
 
 .navbar a {
