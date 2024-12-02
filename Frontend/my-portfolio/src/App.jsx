@@ -10,14 +10,18 @@ import Header from './components/Header.jsx';
 const InteractiveHeader = lazy(() => import('./components/InteractiveHeader.jsx'));
 import { ThemeContext } from './context/ThemeContext.jsx';
 import './App.css';
-
+import ToggleSwitch from './components/smallComponents/ToggleSwitch.jsx';
 function App() {
   const { theme } = useContext(ThemeContext);
 
   return (
     <main className={`App theme-${theme}`}>
+
       <Router>
+        
         <Header />
+       
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/AboutMe" element={<AboutMePage />} />

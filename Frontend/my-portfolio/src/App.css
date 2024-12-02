@@ -47,3 +47,9 @@ html, body {
   background-color: var(--bg-dark);
   color: var(--text-dark);
 }
+
+.containerNav { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

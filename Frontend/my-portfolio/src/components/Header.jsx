@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaHome, FaUser, FaProjectDiagram, FaTools, FaEnvelope } from "react-icons/fa"; // Importing icons
+import { FaHome, FaUser, FaProjectDiagram, FaTools, FaEnvelope } from "react-icons/fa";
 import { AiOutlineHistory } from 'react-icons/ai';
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext.jsx";
@@ -51,7 +51,6 @@ const Header = () => {
                             <span className="icon-label">Career Timeline</span>
                         </Link>
                     </div>
-
                 </li>
                 <li>
                     <div className="icon-col">
