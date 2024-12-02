@@ -1,23 +1,49 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  /* padding: 2rem; */
   text-align: center;
 }
 
-html , body { 
-  padding:0; 
-  margin:0;
+html, body { 
+  padding: 0; 
+  margin: 0;
+}
+
+:root {
+  --bg-light: #fff;
+  --text-light: #333;
+  --bg-dark: #333;
+  --text-dark: white;
 }
 
 .App { 
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
 }
-   
 
 .theme-light { 
-  transition: all 0.3s ease-in-out; background-color: #fff; color: #333; }
-.theme-dark { transition: all 0.3s ease-in-out; background-color: #333; color: white; }
+  transition: all 0.3s ease-in-out;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.theme-dark { 
+  transition: all 0.3s ease-in-out;
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Apply theme to both App and header */
+.App.theme-light,
+.header.theme-light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.App.theme-dark,
+.header.theme-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}

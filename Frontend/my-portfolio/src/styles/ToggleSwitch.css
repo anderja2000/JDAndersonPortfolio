@@ -14,7 +14,7 @@
 .toggle-switch.active {
     border: 2px solid #333;
     transition: border-color 0.7s ease-in;
-    background-color: #04e072;
+    background-color: #4CAF50;
 }
 
 .toggle-switch-circle {

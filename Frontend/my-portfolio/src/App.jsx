@@ -9,12 +9,12 @@ import SkillsPage from './components/SkillsPage.jsx';
 import Header from './components/Header.jsx';
 const InteractiveHeader = lazy(() => import('./components/InteractiveHeader.jsx'));
 import { ThemeContext } from './context/ThemeContext.jsx';
-import { ThemeContextProvider } from './context/ThemeContext.jsx';
+import './App.css';
+
 function App() {
   const { theme } = useContext(ThemeContext);
 
   return (
-
     <main className={`App theme-${theme}`}>
       <Router>
         <Header />
@@ -28,7 +28,6 @@ function App() {
         </Routes>
       </Router>
     </main>
-
   );
 }
 
