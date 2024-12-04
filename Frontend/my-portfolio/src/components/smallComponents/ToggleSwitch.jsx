@@ -1,6 +1,6 @@
 
 import React, { useContext } from "react";
-import "../../styles/ToggleSwitch.css";
+
 import { ThemeContext } from "../../context/ThemeContext";
 import sunIcon from "../../assets/sun-icon.png";
 import moonIcon from "../../assets/moon-icon.png";

@@ -1,8 +1,31 @@
-.home { 
-    
+.home {
+    position: abolute;
+    gap:30px; 
+    margin: 0 auto;
+    /* width: 80%; */
+    display: flex;
+    flex: 1; 
+    flex-direction: row;
+    /* justify-content: space-evenly; */
 }
-body { 
+
+.home h1 { }
+
+
+.col1 { 
+    flex: 2;
+}
+
+.col2 { 
+    flex:3; 
+}
+.home-col {
+
+   
+}
+
+body {
     /* background-color: aqua; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
 }

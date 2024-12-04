@@ -11,6 +11,8 @@ const InteractiveHeader = lazy(() => import('./components/InteractiveHeader.jsx'
 import { ThemeContext } from './context/ThemeContext.jsx';
 import './App.css';
 import ToggleSwitch from './components/smallComponents/ToggleSwitch.jsx';
+
+
 function App() {
   const { theme } = useContext(ThemeContext);
 
