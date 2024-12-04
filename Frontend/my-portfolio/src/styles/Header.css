@@ -1,3 +1,12 @@
+:root {
+  --vegas-gold: #C6B77D;
+  --dark-teal: #004D4D;
+  --burnt-sienna: #E65C2E;
+  --rich-plum: #6F2C91;
+  --navy-blue: #001F3F;
+  --soft-charcoal: #4A4A4A;
+}
+
 .navbar li {
   display: inline;
   list-style-type: none;
@@ -36,11 +45,12 @@
   justify-content: center;
   background-color: transparent;
   width: 90vh;
-  height:60px;
-  
+  height: 60px;
+
   /* padding: 2px; */
   margin-right: 0;
 }
+
 .header .sticky .navbar {
   display: flex;
 
@@ -64,16 +74,18 @@
   height: 6em;
   width: 70vw;
 }
-.header.sticky .icon-col:hover { 
+
+.header.sticky .icon-col:hover {
   animation: stickyHoverIcon 0.3s ease-out forwards;
 
 }
-.header.sticky .icon-col { 
+
+.header.sticky .icon-col {
   padding: 12px 6px;
 }
 
 @keyframes stickyHoverIcon {
-  to { 
+  to {
     transform: translateY(-5px);
     padding: 6px 12px;
   }
@@ -87,9 +99,23 @@
   border: 2px solid yellow;
 }
 
-.theme-light .icon,
+
+/* --dark-teal: #004D4D;
+  --burnt-sienna: #E65C2E; 
+  --rich-plum: #6F2C91; 
+  --navy-blue: #001F3F; 
+  --soft-charcoal: #4A4A4A;  */
+
+.header.not-sticky .theme-light .icon,
 .theme-light .icon-label {
-  color: #335AF5;
+  color: var(--dark-teal);
+  text-shadow: 2px 2px 4pc white;
+}
+
+.header.sticky.theme-light .icon,
+.theme-light .icon-label {
+  color: var(--burnt-sienna);
+  text-shadow: 2px 2px 4pc white;
 }
 
 .theme-dark .icon,
@@ -144,8 +170,9 @@
 }
 
 .theme-light .icon-col:hover {
+
   animation: hoverIconCol 0.5s ease-out forwards;
-  background-color: rgba(161, 254, 213, 0.904);
+  background-color: rgba(244, 167, 52, 0.904);
 }
 
 .theme-dark .icon-col:hover {
