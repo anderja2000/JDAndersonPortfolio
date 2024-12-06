@@ -1,10 +1,11 @@
 import React from "react";
 import  '../styles/SkillsPage.css';
-
+import "./smallComponents/SkillsCarousel";
+import SkillsCarousel from "./smallComponents/SkillsCarousel";
 export default function SkillsPage() {
     return ( 
         <main className="skills">
-            <h1>Skills Page</h1>
+            <SkillsCarousel />
         </main>
     )
 

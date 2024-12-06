@@ -1,4 +1,5 @@
 :root {
+  --light-green: #b8f7ea;
   --vegas-gold: #C6B77D;
   --dark-teal: #004D4D;
   --burnt-sienna: #E65C2E;
@@ -26,16 +27,19 @@
   align-items: center;
   color: inherit;
   height: 5em;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   position: relative;
   transform-origin: top left;
+  transform: rotate(0deg);
 }
 
 .header.not-sticky {
+  background-color: transparent;
   margin: 40px auto;
 }
 
 .header.sticky {
+  background-color: var(--dark-teal);
   position: sticky;
   top: 50%;
   left: 5%;
@@ -46,28 +50,23 @@
   background-color: transparent;
   width: 90vh;
   height: 60px;
-
-  /* padding: 2px; */
   margin-right: 0;
+}
+
+.header.transitioning {
+  opacity: 0.5;
+  background-color: rgba(0, 77, 77, 0.5);
 }
 
 .header .sticky .navbar {
   display: flex;
-
   flex-direction: column;
   width: 50vh;
 }
 
-
 .header.sticky .icon-col {
   transform: rotate(-90deg);
 }
-
-/* .header.sticky:hover {
-  transform: rotate(90deg) translateY(-50%) translateX(-50%);
-  height: auto;
-  width: 100vh;
-} */
 
 .header.not-sticky:hover {
   transform: scale(1.1);
@@ -77,7 +76,6 @@
 
 .header.sticky .icon-col:hover {
   animation: stickyHoverIcon 0.3s ease-out forwards;
-
 }
 
 .header.sticky .icon-col {
@@ -98,13 +96,6 @@
 .dark-border {
   border: 2px solid yellow;
 }
-
-
-/* --dark-teal: #004D4D;
-  --burnt-sienna: #E65C2E; 
-  --rich-plum: #6F2C91; 
-  --navy-blue: #001F3F; 
-  --soft-charcoal: #4A4A4A;  */
 
 .header.not-sticky .theme-light .icon,
 .theme-light .icon-label {
@@ -170,7 +161,6 @@
 }
 
 .theme-light .icon-col:hover {
-
   animation: hoverIconCol 0.5s ease-out forwards;
   background-color: rgba(244, 167, 52, 0.904);
 }
@@ -178,6 +168,15 @@
 .theme-dark .icon-col:hover {
   animation: hoverIconCol 0.5s ease-out forwards;
   background-color: #335AF5;
+}
+
+.header.sticky.theme-light {
+  background-color: var(--dark-teal);
+}
+
+.header.sticky.theme-light .icon-col:hover {
+  border: 2px inset var(--rich-plum);
+  background-color: #e8cb94;
 }
 
 .theme-light,
@@ -189,7 +188,6 @@
   display: inline-block;
 }
 
-/* Adjust hover animation for sticky state */
 .header.sticky .icon-col:hover {
   animation: none;
   transform: rotate(-90deg) translateX(-10px);

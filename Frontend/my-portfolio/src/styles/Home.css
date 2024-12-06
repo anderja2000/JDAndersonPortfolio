@@ -13,15 +13,29 @@
 
 
 .col1 { 
-    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 3;
 }
 
 .col2 { 
-    flex:3; 
+    display: flex;
+    flex-direction: column;
+    flex:3;
+ 
 }
 .home-col {
 
    
+}
+
+.typed-roles { 
+    font-size: 2rem; 
+    color: #2b31e0;
+    text-decoration: underline;
+    font-weight: 600;
+    
 }
 
 body {
