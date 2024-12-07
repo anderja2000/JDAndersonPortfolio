@@ -59,7 +59,7 @@ body {
 
 /* Container styles for the carousel */
 .carousel-container {
-    padding: 20px 0; /* Adds vertical padding to the carousel items */
+    padding: 10px 0; /* Adds vertical padding to the carousel items */
 }
 
 /* Styles for individual skill logos in the carousel */

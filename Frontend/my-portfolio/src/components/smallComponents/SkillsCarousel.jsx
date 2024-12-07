@@ -25,7 +25,7 @@ const logos = [
 ];
 
 export default function SkillsCarousel() {
-    
+
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -49,7 +49,12 @@ export default function SkillsCarousel() {
     };
 
     return (
-        <section id='techStack'>
+        <motion.section
+            id='techStack'
+            initial={{ y: 25, opacity: 0 }} // Start slightly below and transparent
+            animate={{ y: 0, opacity: 1 }} // Slide up to original position and become visible
+            transition={{ duration: 0.5, delay: 1.2 }} // 
+        >
             <h3>My Skills</h3>
             <div className="skills-carousel-wrapper">
                 <Carousel
@@ -67,8 +72,8 @@ export default function SkillsCarousel() {
                 >
                     {/* Map over logos and wrap each in a motion.div */}
                     {logos.map((logo, index) => (
-                        <motion.div 
-                            key={index} 
+                        <motion.div
+                            key={index}
                             className='skill-logo'
                             variants={itemVariants}
                             initial="hidden"
@@ -82,6 +87,6 @@ export default function SkillsCarousel() {
                     ))}
                 </Carousel>
             </div>
-        </section>
+        </motion.section>
     );
 }
