@@ -1,34 +1,27 @@
-
-
 import React from 'react';
+import { motion } from 'framer-motion';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import reactLogo from '../../assets/react.png';
-import csharpLogo from '../../assets/csharp.png';
-import dotnetLogo from '../../assets/dotnet.png';
-import jsLogo from '../../assets/js.png';
-import sqlLogo from '../../assets/sql.png';
-import cssLogo from '../../assets/css.png';
-import dockerLogo from '../../assets/docker.png';
-import azureLogo from '../../assets/azure.jpg';
-import htmlLogo from '../../assets/html.png';
-import tailwindLogo from '../../assets/tailwind.png';
-import gitLogo from '../../assets/git.png';
-import githubLogo from '../../assets/github.png';
+import { FaReact, FaJs, FaCss3Alt, FaHtml5, FaGitAlt, FaGithub, FaDocker } from "react-icons/fa";
+import { TbBrandCSharp, TbSql } from "react-icons/tb";
+import { AiOutlineDotNet } from "react-icons/ai";
+import { VscAzure } from "react-icons/vsc";
+import { RiTailwindCssFill } from "react-icons/ri";
 
+// Define an array of logos using React icons
 const logos = [
-    { src: reactLogo, alt: 'React' },
-    { src: csharpLogo, alt: 'C#' },
-    { src: dotnetLogo, alt: '.NET' },
-    { src: jsLogo, alt: 'JavaScript' },
-    { src: sqlLogo, alt: 'SQL' },
-    { src: cssLogo, alt: 'CSS' },
-    { src: dockerLogo, alt: 'Docker' },
-    { src: azureLogo, alt: 'Azure' },
-    { src: htmlLogo, alt: 'HTML' },
-    { src: tailwindLogo, alt: 'Tailwind' },
-    { src: gitLogo, alt: 'Git' },
-    { src: githubLogo, alt: 'GitHub' },
+    { icon: <FaReact size={80} id="react-logo" />, alt: 'React' },
+    { icon: <TbBrandCSharp size={80} id='csharp-logo' />, alt: 'C#' },
+    { icon: <AiOutlineDotNet size={80} id='dotnet-logo' />, alt: '.NET' },
+    { icon: <FaJs size={80} id='js-logo' />, alt: 'JavaScript' },
+    { icon: <TbSql size={80} id='sql-logo' />, alt: 'SQL' },
+    { icon: <FaCss3Alt size={80} id='css-logo' />, alt: 'CSS' },
+    { icon: <FaDocker size={80} id='docker-logo' />, alt: 'Docker' },
+    { icon: <VscAzure size={80} id='azure-logo' />, alt: 'Azure' },
+    { icon: <FaHtml5 size={80} id='html-logo' />, alt: 'HTML' },
+    { icon: <RiTailwindCssFill size={80} id='tailwind-logo' />, alt: 'Tailwind CSS' },
+    { icon: <FaGitAlt size={80} id='git-logo' />, alt: 'Git' },
+    { icon: <FaGithub size={80} id='github-logo' />, alt: 'GitHub' },
 ];
 
 export default function SkillsCarousel() {
@@ -48,25 +41,47 @@ export default function SkillsCarousel() {
         }
     };
 
+    // Define animation variants for sliding effect
+    const itemVariants = {
+        hidden: { opacity: 0, x: -50 }, // Start off-screen to the left
+        visible: { opacity: 1, x: 0 },   // Slide into view
+        exit: { opacity: 0, x: 50 }      // Slide out to the right
+    };
+
     return (
-        <div className="skills-carousel-wrapper">
-            <Carousel
-                responsive={responsive}
-                infinite={true}
-                autoPlay={true}
-                autoPlaySpeed={10000} 
-                keyBoardControl={true}
-                customTransition='all .5'
-                transitionDuration={500}
-                containerClass="carousel-container"
-                removeArrowOnDeviceType={['tablet', 'mobile']}
-                dotListClass='custom-dot-list-style'
-                itemClass='carousel-item-padding-40-px'
-            >
-                {logos.map((logo, index) => ( 
-                    <img key={index} src={logo.src} alt={logo.alt} className='skill-logo' />
-                ))}
-            </Carousel>
-        </div>
+        <section id='techStack'>
+            <h3>My Skills</h3>
+            <div className="skills-carousel-wrapper">
+                <Carousel
+                    responsive={responsive}
+                    infinite={true}
+                    autoPlay={true}
+                    autoPlaySpeed={1000}
+                    keyBoardControl={true}
+                    customTransition='transform 0.5s ease-in-out'
+                    transitionDuration={500}
+                    containerClass="carousel-container"
+                    removeArrowOnDeviceType={['tablet', 'mobile', 'desktop']}
+                    dotListClass='custom-dot-list-style'
+                    itemClass='carousel-item-padding-40-px'
+                >
+                    {/* Map over logos and wrap each in a motion.div */}
+                    {logos.map((logo, index) => (
+                        <motion.div 
+                            key={index} 
+                            className='skill-logo'
+                            variants={itemVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            transition={{ duration: 0.5 }} // Control the timing of the animation
+                        >
+                            {logo.icon}
+                            <span>{logo.alt}</span> {/* Optional label for each icon */}
+                        </motion.div>
+                    ))}
+                </Carousel>
+            </div>
+        </section>
     );
 }

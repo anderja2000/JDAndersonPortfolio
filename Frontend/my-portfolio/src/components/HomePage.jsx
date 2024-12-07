@@ -1,8 +1,9 @@
 import React from 'react'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion } from 'framer-motion';
-import {ReactTyped} from 'react-typed';
-
+import { ReactTyped } from 'react-typed';
+import '../components/smallComponents/SkillsCarousel.jsx';
+import SkillsCarousel from '../components/smallComponents/SkillsCarousel.jsx';
 export default function HomePage() {
     const roles = [
         "Software Engineer",
@@ -26,9 +27,9 @@ export default function HomePage() {
                 >JD Anderson</motion.h1>
 
                 <motion.div
-                    initial = {{opacity: 0}}
-                    animate = {{opacity: 1}}
-                    transition={{delay:0.8, duration:0.5}}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8, duration: 0.5 }}
                 >
                     <ReactTyped
                         strings={roles}
@@ -39,6 +40,12 @@ export default function HomePage() {
                     />
 
                 </motion.div>
+
+
+                    
+                    <SkillsCarousel />
+              
+
             </section>
 
             <section className="home-col col2">
