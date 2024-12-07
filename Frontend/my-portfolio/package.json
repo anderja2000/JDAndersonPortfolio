@@ -17,10 +17,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
-<<<<<<< HEAD
     "react-multi-carousel": "^2.8.5",
-=======
->>>>>>> ec9a91f4ae349b53697062bb63f3f17f6fa789d0
     "react-router-dom": "^6.28.0",
     "react-slick": "^0.30.2",
     "react-typed": "^2.0.12",
