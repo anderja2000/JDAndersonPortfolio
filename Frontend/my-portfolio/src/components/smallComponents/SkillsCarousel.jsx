@@ -10,18 +10,18 @@ import { RiTailwindCssFill } from "react-icons/ri";
 
 // Define an array of logos using React icons
 const logos = [
-    { icon: <FaReact size={80} id="react-logo" />, alt: 'React' },
-    { icon: <TbBrandCSharp size={80} id='csharp-logo' />, alt: 'C#' },
-    { icon: <AiOutlineDotNet size={80} id='dotnet-logo' />, alt: '.NET' },
-    { icon: <FaJs size={80} id='js-logo' />, alt: 'JavaScript' },
-    { icon: <TbSql size={80} id='sql-logo' />, alt: 'SQL' },
-    { icon: <FaCss3Alt size={80} id='css-logo' />, alt: 'CSS' },
-    { icon: <FaDocker size={80} id='docker-logo' />, alt: 'Docker' },
-    { icon: <VscAzure size={80} id='azure-logo' />, alt: 'Azure' },
-    { icon: <FaHtml5 size={80} id='html-logo' />, alt: 'HTML' },
-    { icon: <RiTailwindCssFill size={80} id='tailwind-logo' />, alt: 'Tailwind CSS' },
-    { icon: <FaGitAlt size={80} id='git-logo' />, alt: 'Git' },
-    { icon: <FaGithub size={80} id='github-logo' />, alt: 'GitHub' },
+    { icon: <FaReact className='carousel-icon' size={80} id="react-logo" />, alt: 'React' },
+    { icon: <TbBrandCSharp className='carousel-icon' size={80} id='csharp-logo' />, alt: 'C#' },
+    { icon: <AiOutlineDotNet className='carousel-icon' size={80} id='dotnet-logo' />, alt: '.NET' },
+    { icon: <FaJs size={80} className='carousel-icon' id='js-logo' />, alt: 'JavaScript' },
+    { icon: <TbSql className='carousel-icon' size={80} id='sql-logo' />, alt: 'SQL' },
+    { icon: <FaCss3Alt className='carousel-icon' size={80} id='css-logo' />, alt: 'CSS' },
+    { icon: <FaDocker className='carousel-icon' size={80} id='docker-logo' />, alt: 'Docker' },
+    { icon: <VscAzure className='carousel-icon' size={80} id='azure-logo' />, alt: 'Azure' },
+    { icon: <FaHtml5 className='carousel-icon' size={80} id='html-logo' />, alt: 'HTML' },
+    { icon: <RiTailwindCssFill className='carousel-icon' size={80} id='tailwind-logo' />, alt: 'Tailwind CSS' },
+    { icon: <FaGitAlt className='carousel-icon' size={80} id='git-logo' />, alt: 'Git' },
+    { icon: <FaGithub className='carousel-icon' size={80} id='github-logo' />, alt: 'GitHub' },
 ];
 
 export default function SkillsCarousel() {
@@ -29,7 +29,7 @@ export default function SkillsCarousel() {
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 4
+            items: 3
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -61,7 +61,7 @@ export default function SkillsCarousel() {
                     responsive={responsive}
                     infinite={true}
                     autoPlay={true}
-                    autoPlaySpeed={1000}
+                    autoPlaySpeed={750}
                     keyBoardControl={true}
                     customTransition='transform 0.5s ease-in-out'
                     transitionDuration={500}

@@ -146,6 +146,19 @@ body {
     color: #512BD4;
 }
 
+.carousel-icon {
+    padding: 15px 10px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    /* Subtle shadow for depth */
+    border: 1px outset #666666;
+    transition: transform 0.3s ease , border 0.3s ease;
+}
+.carousel-icon:hover {
+    transform: scale(1.1);
+    border: 3px outset var(--dark-teal);
+}
+
 #techStack {
     display: flex;
     flex-direction: column;
