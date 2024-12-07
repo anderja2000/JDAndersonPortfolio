@@ -1,78 +1,104 @@
 /* Main container for the home page */
 .home {
-    position: relative; /* Corrected from 'abolute' */
-    gap: 30px; 
+    margin-bottom: 10%;
+    position: relative;
+    /* Corrected from 'abolute' */
+    gap: 30px;
     flex: 1;
     margin: 0 auto;
     display: flex;
-    flex-direction: row; /* Aligns child sections in a row */
-    width: 80%; /* Ensure it takes full width */
+    flex-direction: row;
+    /* Aligns child sections in a row */
+    width: 80%;
+    /* Ensure it takes full width */
 }
 
 /* Styles for the main heading */
-.home h1 { 
-    margin: 0; /* Reset margin for consistent spacing */
+.home h1 {
+    margin: 0;
+    /* Reset margin for consistent spacing */
 }
 
 /* Column 1 styles */
-.col1 { 
+.col1 {
     display: flex;
-    flex-direction: column; /* Stacks children vertically */
-    gap: 30px; /* Space between elements */
-    flex: 3; /* Adjust as needed for layout */
+    flex-direction: column;
+    /* Stacks children vertically */
+    gap: 30px;
+    /* Space between elements */
+    flex: 3;
+    /* Adjust as needed for layout */
 }
 
 /* Column 2 styles */
-.col2 { 
+.col2 {
     display: flex;
-    flex-direction: column; /* Stacks children vertically */
-    flex: 3; /* Adjust as needed for layout */
+    flex-direction: column;
+    /* Stacks children vertically */
+    flex: 3;
+    /* Adjust as needed for layout */
 }
 
 /* General styles for columns (optional) */
 .home-col {
-    flex:1; 
+    flex: 1;
     width: 20%;
     /* Ensures full width for columns */
 }
 
 /* Styles for typed roles text */
-.typed-roles { 
-    font-size: 2rem; 
-    color: #2b31e0;
+.typed-roles {
+    font-size: 2rem;
+   
     text-decoration: underline;
     font-weight: 600;
+}
+.typed-roles-light { 
+    color: #2b31e0;
+}
+
+.typed-roles-dark {
+    color: #15d9eb;
 }
 
 /* Body styles (optional, can be customized) */
 body {
-    margin: 0; /* Reset default margin */
-    height: 100vh; /* Full height of the viewport */
+    margin: 0;
+    /* Reset default margin */
+    height: 100vh;
+    /* Full height of the viewport */
     display: flex;
 }
 
 /* Wrapper for the skills carousel */
 .skills-carousel-wrapper {
-    width: 100%; /* Full width of parent container */
-    overflow: hidden; /* Hides overflow content if necessary */
+    width: 100%;
+    /* Full width of parent container */
+    overflow: hidden;
+    /* Hides overflow content if necessary */
 }
 
 /* Container styles for the carousel */
 .carousel-container {
-    padding: 10px 0; /* Adds vertical padding to the carousel items */
+    padding: 10px 0;
+    /* Adds vertical padding to the carousel items */
 }
 
 /* Styles for individual skill logos in the carousel */
 .skill-logo {
-    max-width: 80px; /* Sets a maximum width for logos */
-    height: auto; /* Maintains aspect ratio of logos */
-    margin: 0 auto; /* Centers logos within their container */
-    display: block; /* Ensures each logo is treated as a block element */
+    max-width: 80px;
+    /* Sets a maximum width for logos */
+    height: auto;
+    /* Maintains aspect ratio of logos */
+    margin: 0 auto;
+    /* Centers logos within their container */
+    display: block;
+    /* Ensures each logo is treated as a block element */
 }
 
 
 /* icons colors and styles */
-#js-logo { 
+#js-logo {
     color: #F7DF1E;
 }
 
@@ -92,13 +118,13 @@ body {
     color: #E34F26;
 }
 
-#git-logo { 
+#git-logo {
     color: #F05032;
-}   
+}
 
 #github-logo {
     color: #333;
-}   
+}
 
 #docker-logo {
     color: #2496ED;
@@ -106,7 +132,7 @@ body {
 
 #azure-logo {
     color: #0072C6;
-}   
+}
 
 #sql-logo {
     color: #F1502F;
@@ -122,20 +148,94 @@ body {
 
 #techStack {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 20px; /* Space between elements */
-    align-items: center; /* Center items horizontally */
-    padding: 20px; /* Add padding inside the section */
-    margin-bottom: 30px; /* Space below the section */
-    background-color: #f9fafb; /* Light background color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    flex-direction: column;
+    /* Stack items vertically */
+    gap: 20px;
+    /* Space between elements */
+    align-items: center;
+    /* Center items horizontally */
+    padding: 20px;
+    /* Add padding inside the section */
+    margin-bottom: 30px;
+    /* Space below the section */
+    background-color: #f9fafb;
+    /* Light background color */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow for depth */
 }
 
 /* Styles for the heading in tech stack */
 #techStack h3 {
-    text-decoration: underline; /* Underline for emphasis */
-    font-weight: 600; /* Bold text */
-    font-size: 1.5rem; /* Size of the heading */
-    color: #333; /* Dark color for readability */
+    text-decoration: underline;
+    /* Underline for emphasis */
+    font-weight: 600;
+    /* Bold text */
+    font-size: 1.5rem;
+    /* Size of the heading */
+    color: #333;
+    /* Dark color for readability */
+}
+
+
+/* Scroll Indicator */
+.scroll-indicator {
+    display: block;
+    position: static;
+    /* Fixed position at the bottom */
+    bottom: 20px;
+    /* Space from the bottom */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Adjust for centering */
+    text-align: center;
+    /* Center text */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    z-index: 100;
+    /* Ensure it appears above other content */
+    animation: buzz 2s infinite;
+    font-size: 1.4em
+}
+
+@keyframes buzz {
+
+    0% { 
+        transform: translateY(0);
+    }
+
+    50% { 
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+.scroll-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center items horizontally */
+    
+    /* Change to your desired color */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.theme-light .scroll-link {
+    color: #2b31e0;
+}
+
+.theme-dark .scroll-link {
+    color: #15d9eb;
+}
+
+.scroll-link p {
+    margin-top: 5px;
+    /* Space between icon and text */
+    font-weight: bold;
+    /* Bold text for emphasis */
 }

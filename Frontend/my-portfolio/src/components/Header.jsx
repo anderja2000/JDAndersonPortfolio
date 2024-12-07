@@ -52,6 +52,7 @@ const Header = () => {
             {isSticky && <div style={{ height: '5em' }} />}
             <nav className={headerClasses}>
                 <ul className="navbar">
+                    <ToggleSwitch />
                     <li>
                         <div className="icon-col">
                             <Link to="/">
@@ -100,7 +101,7 @@ const Header = () => {
                             </Link>
                         </div>
                     </li>
-                    <ToggleSwitch />
+
                 </ul>
             </nav>
         </>

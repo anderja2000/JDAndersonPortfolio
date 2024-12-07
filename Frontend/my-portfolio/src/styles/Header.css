@@ -22,7 +22,7 @@
   flex-direction: row;
   width: 60vw;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   background-color: transparent;
   align-items: center;
   color: inherit;
@@ -39,6 +39,7 @@
 }
 
 .header.sticky {
+  z-index: 2000;
   background-color: var(--dark-teal);
   position: sticky;
   top: 50%;
@@ -48,7 +49,7 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  width: 90vh;
+  width: 93vh;
   height: 60px;
   margin-right: 0;
 }
@@ -118,7 +119,7 @@
   align-items: center;
   display: flex;
   flex-grow: 1;
-  gap: 5px;
+  gap: 2px;
   justify-content: space-evenly;
 }
 
