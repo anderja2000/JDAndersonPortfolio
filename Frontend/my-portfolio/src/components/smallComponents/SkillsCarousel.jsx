@@ -61,7 +61,7 @@ export default function SkillsCarousel() {
                     responsive={responsive}
                     infinite={true}
                     autoPlay={true}
-                    autoPlaySpeed={750}
+                    autoPlaySpeed={1000}
                     keyBoardControl={true}
                     customTransition='transform 0.5s ease-in-out'
                     transitionDuration={500}
