@@ -53,7 +53,7 @@ export default function SkillsCarousel() {
             id='techStack'
             initial={{ y: 25, opacity: 0 }} // Start slightly below and transparent
             animate={{ y: 0, opacity: 1 }} // Slide up to original position and become visible
-            transition={{ duration: 0.5, delay: 0.6 }} // 
+            transition={{ duration: 0.5, delay: 2 }} // 
         >
             <h3 >My Skills</h3>
             <div className="skills-carousel-wrapper">

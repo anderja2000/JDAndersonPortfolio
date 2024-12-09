@@ -1,11 +1,25 @@
 import React from "react";
-import '../styles/AboutMePage.css';
+import AboutVideo from '../assets/About.mp4';
+
+
+
+
 
 export default function AboutMePage() {
     return (
-        <main className="about-me-page">
-            <h1>About Me Page</h1>    
-            <h2>my name</h2>
-        </main>
+
+        <>
+            <main className="about-me-page">
+                <video autoPlay loop muted>
+                    <source src={AboutVideo} type="video/mp4" />
+                </video>
+                <section className="content">
+                    
+                </section>
+            </main>
+
+           
+        </>
+
     )
 }

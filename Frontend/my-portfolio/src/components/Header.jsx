@@ -7,7 +7,7 @@ import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext.jsx";
 import ToggleSwitch from "./smallComponents/ToggleSwitch.jsx";
 
-const Header = () => {
+const Header = ({ isAboutPage }) => {
     const [isSticky, setIsSticky] = useState(false);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const { theme } = useContext(ThemeContext);
@@ -45,7 +45,7 @@ const Header = () => {
         };
     }, [isSticky]);
 
-    const headerClasses = `header ${isSticky ? 'sticky' : 'not-sticky'} ${isTransitioning ? 'transitioning' : ''} theme-${theme} ${theme === "dark" ? "dark-border" : "default-border"}`;
+    const headerClasses = `header ${isSticky ? 'sticky' : 'not-sticky'} ${isTransitioning ? 'transitioning' : ''} theme-${theme} ${theme === "dark" ? "dark-border" : "default-border"} ${isAboutPage ? 'about-page' : ''}`;
 
     return (
         <>
@@ -101,7 +101,6 @@ const Header = () => {
                             </Link>
                         </div>
                     </li>
-
                 </ul>
             </nav>
         </>

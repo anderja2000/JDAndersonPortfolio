@@ -1,5 +1,62 @@
-.about-me-page { 
-    /* background-color: aqua; */
+:root {
+    --light-green: #b8f7ea;
+    --vegas-gold: #C6B77D;
+    --dark-teal: #004D4D;
+    --burnt-sienna: rgb(230, 92, 46);
+    --rich-plum: #6F2C91;
+    --navy-blue: #001F3F;
+    --soft-charcoal: #4A4A4A;
+  }
+
+
+.header.about-page {
+    
+    color: white;
+    position: fixed;
+    top: 0;
+    left: calc(50% - 30vw);
+    display: flex;
+    margin: 15px auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 60vw;
+    z-index: 1000;
+}
+.header.about-page.theme-light { 
+    border: 3px solid #121BA5; 
+    background-color: transparent;
+}
+.header.about-page.theme-light .icon,
+.header.about-page.theme-light .icon-label {
+    color: #C77944;
+}
+
+.about-me-page {
+
+    width: 100vw;
     display: flex;
     justify-content: center;
+    position: relative;
+    height: 100vh;
 }
+
+.content {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 21;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 20;
+}
+
