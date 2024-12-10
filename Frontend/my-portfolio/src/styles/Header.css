@@ -15,11 +15,10 @@
     }
 
     .header {
-      position: fixed;
+      position: sticky;
       z-index: 1000;
       width: 100%;
-      top: 0;
-      left: 0;
+
       border-radius: 40px;
       display: flex;
       flex-direction: row;
@@ -41,7 +40,7 @@
       margin: 40px auto;
     }
 
-    .header.sticky {
+    /* .header.sticky {
       z-index: 2000;
       background-color: var(--dark-teal);
       position: sticky;
@@ -54,6 +53,23 @@
       background-color: transparent;
       width: 93vh;
       height: 60px;
+      margin-right: 0;
+    } */
+    .header.sticky {
+      z-index: 2000;
+      background-color: var(--dark-teal);
+      position: fixed;
+      /* Change from sticky to fixed */
+      top: -5%;
+      left: 7%;
+      /* Stick to the left side */
+      transform: translateY(50%) rotate(90deg);
+      /* padding: 2px; */
+      /* Adjust for vertical centering */
+      width: 40vw;
+      /* Set a fixed width */
+      height: 70px;
+      /* Adjust height as needed */
       margin-right: 0;
     }
 

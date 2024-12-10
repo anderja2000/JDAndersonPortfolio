@@ -17,7 +17,7 @@ const Header = ({ isAboutPage }) => {
         const handleScroll = () => {
             animationFrameId = requestAnimationFrame(() => {
                 const headerHeight = document.querySelector('.header').offsetHeight;
-                if (window.scrollY > headerHeight / 2) {
+                if (window.scrollY > 0) { // Change this line
                     if (!isSticky) {
                         setIsTransitioning(true);
                         setTimeout(() => {
